@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlock Our Love Journey💘❤️</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --p: #ff4d88; }
+        body, html { margin: 0; padding: 0; min-height: 100vh; font-family: 'Poppins', sans-serif; background: #050505; color: white; overflow-x: hidden; }
+
+        /* --- BACKGROUND ANIMATIONS --- */
+        #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+        .content-layer { position: relative; z-index: 10; }
+
+        /* FLOATING CONTAINER */
+        #animation-container {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* FIXED: CSS HEART (No image file needed) */
+        .balloon {
+            position: absolute;
+            bottom: -150px;
+            width: 30px;
+            height: 30px;
+            background: var(--p);
+            transform: rotate(45deg);
+            animation: floatUp linear forwards;
+            box-shadow: 0 0 15px var(--p);
+        }
+        .balloon::before, .balloon::after {
+            content: '';
+            width: 30px; height: 30px;
+            background: var(--p);
+            border-radius: 50%;
+            position: absolute;
+        }
+        .balloon::before { left: -15px; }
+        .balloon::after { top: -15px; }
+
+        .floating-text {
+            position: absolute;
+            bottom: -50px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            color: #ffb3cc;
+            text-shadow: 0 0 10px var(--p);
+            white-space: nowrap;
+            animation: floatUp linear forwards;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(45deg) scale(0.8); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-120vh) rotate(45deg) scale(1.2); opacity: 0; }
+        }
+
+        /* --- UI STYLES --- */
+        #p1 { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .t { font-family: 'Dancing Script', cursive; font-size: 3.5rem; color: var(--p); text-shadow: 0 0 15px var(--p); margin-bottom: 20px; text-align: center; }
+        .ib { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 30px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.2); width: 85%; max-width: 350px; display: flex; flex-direction: column; gap: 15px; }
+        input { padding: 12px; border-radius: 25px; border: none; text-align: center; background: rgba(255,255,255,0.95); font-weight: 600; outline: none; color: #333; }
+        .btn { padding: 15px; border-radius: 30px; border: none; background: var(--p); color: white; font-weight: bold; cursor: pointer; box-shadow: 0 0 15px var(--p); transition: 0.3s; }
+
+        #p2 { display: none; padding: 30px 15px; }
+        .box { background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(12px); border-radius: 25px; padding: 25px; margin-bottom: 30px; border: 1px solid rgba(255,255,255,0.1); max-width: 650px; margin-inline: auto; }
+        h2 { font-family: 'Dancing Script', cursive; font-size: 2.2rem; color: var(--p); text-align: center; margin-top: 0; }
+        .acc { margin-bottom: 12px; border-radius: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255, 77, 136, 0.3); overflow: hidden; }
+        .ah { width: 100%; padding: 18px; text-align: left; background: none; border: none; font-size: 1.1rem; color: #ff99cc; cursor: pointer; display: flex; justify-content: space-between; font-weight: 600; }
+        .ac { display: none; padding: 0 20px 20px; color: #eee; line-height: 1.7; white-space: pre-line; font-size: 0.95rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 12px; }
+        .g-card { background: rgba(255,255,255,0.1); height: 80px; border-radius: 18px; display: flex; justify-content: center; align-items: center; font-size: 1.8rem; cursor: pointer; border: 1px solid rgba(255,255,255,0.2); }
+        #over { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.98); display: none; justify-content: center; align-items: center; flex-direction: column; z-index: 1000; }
+        #over img { max-width: 90%; max-height: 75%; border: 2px solid white; border-radius: 10px; }
+        #cap { margin-top: 15px; color: #fff; font-family: 'Dancing Script', cursive; font-size: 1.5rem; text-align: center; }
+        .cl { position: absolute; top: 20px; right: 30px; font-size: 3rem; color: white; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <canvas id="particles-js"></canvas>
+    <div id="animation-container"></div>
+
+    <div class="content-layer">
+        <div id="p1">
+            <h1 class="t">Unlock Our Love Journey💘❤️</h1>
+            <div class="ib">
+                <input type="text" id="n1" placeholder="Your Royal Name ✨">
+                <input type="text" id="n2" placeholder="My Beautiful Queen’s Name 👑">
+                <button class="btn" onclick="start()">Begin Our Forever💍✨</button>
+            </div>
+        </div>
+
+        <div id="p2">
+            <div class="box">
+                <h2>Moments That Built Us📖</h2>
+                <div id="story"></div>
+            </div>
+
+            <div class="box">
+                <h2>Our Precious Moments🎁</h2>
+                <div class="grid" id="gifts"></div>
+            </div>
+
+            <div class="box" style="text-align: center;">
+                <h2>A Special Letter 💌</h2>
+                <div style="padding: 25px; border: 2px dashed var(--p); border-radius: 20px; cursor: pointer;" onclick="pop('letter.jpg.png', 'Forever Yours...')">
+                    <p style="font-size: 1.3rem; color: var(--p); font-family: 'Dancing Script', cursive;">"Nee illama naan illa... Click to read 💖"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="over">
+        <span class="cl" onclick="document.getElementById('over').style.display='none'">×</span>
+        <img id="oi" src="">
+        <p id="cap"></p>
+    </div>
+
+<script>
+    // PARTICLE ENGINE
+    const canvas = document.getElementById('particles-js');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    function init() {
+        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+        particles = [];
+        for(let i=0; i<85; i++) particles.push({
+            x: Math.random()*canvas.width, y: Math.random()*canvas.height,
+            vx: (Math.random()-0.5)*0.5, vy: (Math.random()-0.5)*0.5
+        });
+    }
+    function animate() {
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        particles.forEach((p, i) => {
+            p.x += p.vx; p.y += p.vy;
+            if(p.x<0 || p.x>canvas.width) p.vx *= -1;
+            if(p.y<0 || p.y>canvas.height) p.vy *= -1;
+            ctx.fillStyle = '#ff4d88'; ctx.beginPath(); ctx.arc(p.x, p.y, 2, 0, Math.PI*2); ctx.fill();
+            for(let j=i+1; j<particles.length; j++) {
+                let p2 = particles[j];
+                let d = Math.hypot(p.x-p2.x, p.y-p2.y);
+                if(d < 110) {
+                    ctx.strokeStyle = `rgba(255, 77, 136, ${1 - d/110})`;
+                    ctx.lineWidth = 0.5; ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p2.x, p2.y); ctx.stroke();
+                }
+            }
+        });
+        requestAnimationFrame(animate);
+    }
+    init(); animate();
+
+    // --- UPDATED ANIMATION: NO IMAGE NEEDED ---
+    const container = document.getElementById('animation-container');
+    const messages = ["Love You ❤️", "Happy Valentine's Day 🌹", "Miss You 🥺", "My Everything 💍", "Forever & Ever ✨"];
+
+    function createFloatingElement() {
+        const isText = Math.random() > 0.6;
+        if (isText) {
+            const el = document.createElement('div');
+            el.className = 'floating-text';
+            el.innerText = messages[Math.floor(Math.random() * messages.length)];
+            el.style.left = Math.random() * 90 + 'vw';
+            el.style.animationDuration = (Math.random() * 4 + 6) + 's';
+            container.appendChild(el);
+            setTimeout(() => el.remove(), 10000);
+        } else {
+            // FIX: Creating heart shape using CSS
+            const heart = document.createElement('div');
+            heart.className = 'balloon'; 
+            heart.style.left = Math.random() * 90 + 'vw';
+            heart.style.animationDuration = (Math.random() * 5 + 7) + 's';
+            container.appendChild(heart);
+            setTimeout(() => heart.remove(), 12000);
+        }
+    }
+    setInterval(createFloatingElement, 1000); 
+    // --- YOUR EXACT WORD-TO-WORD CONTENT ---
+    const data = [
+        {
+            h: "Our First Meet (2023) 🗓️", 
+            c: "Andha naal la avan avanoda friends kooda nadandhu vandhaan… 🚶‍♂️\nAana andha friends kootathula naan avana kavanikkave illa 🙈\nAndha event la enakku sapadu vachathu kooda avan dhaan… 🍽️\nAppovum naan avana paakaama dhan irundhen 🥺\n“Konjam aachum avana paathuranum…” nu saththama pesi irundhalum 😅\nEn kannu avana thedaama dhaan irundhudhu 👀\nAana indha ella moments la enna paathu rasichathu avan dhaan 💖\nNaan konjam veliya ponnadhum, ennakkaga valiya paathuttu nindrathu kooda avan dhaan 💭\nNaan avana paakala nu avan annaikku mattum feel panniruppan… 😔\nAana naan innum varaikum andha naal la avana paakaama ponadhukku dhan feel pannuren 💞\n“Maybe that day I didn’t notice you…\nBut my heart had already chosen you.” ❤️"
+        },
+        {
+            h: "First Chat 💬", 
+            c: "“Hii…” nu simple ah start aana andha message dhaan namma story ku real beginning 💖\n“Neenga Durai Sami puram thane…?” nu ketta andha kelvi la dhan first connection irundhuchu 😌\nNaanum konjam attitude la, “Ama enna ippa…” 😏 “Ama yaru neenga…?” 🤨 nu reply panninen.\n“I’m Vicky…” nu sonna andha line la dhan namma first introduction 💬✨\n“Oru function la pathen…” nu sonna odane, Andha Valakappu naal enakku flash back aayiduchu 🥺\n“Okk apdina my name enna solu…” nu tease pannina andha moment la dhan stranger irundhavan slowly en heart la oru space eduthaan 💞\nAndha “Hii” la start aana conversation… Innikku varaikum mudiyala ❤️"
+        },
+        {
+            h: "Proposal & Promise Day 💍", 
+            c: "“Varavala kasta pada vida koodathu…” 🥺 Antha line dhaan en heart ah romba touch pannadhu 💔🤍\nPeriya aasai ellam illa nu sonna… “Ennoda life romba kutty… athula kolantha thanamavum irukanum… enna purinchavalavum iruntha problem eh varadhu…” nu sonna appo 🥹💫\nUn simple dream la dhaan enakku real love therinjuchu 💕\nAana nee sonna oru vaarthai romba strong ah irundhuchu… “Inga trust thane problem… ellarum unmaya iruka mattanga…” 💭💔\nAthu ketta appo naanum ketten… “Athula enna problem da? Enaku problem illa…” 🤍\nUn mela enakku bayam illa… doubt illa… Aana un manasukulla irundha bayam dhaan romba perusa irundhuchu 🥺\n“Enaku 5 years time iruku…” ⏳ “Job vanganum… romba illanalum just ulla poita pothum…” 💼✨\n“Konjam perusa veedu kattanum…” 🏠 “Unaku aasai illanalum enaku iruku… varavala kasta pada vida koodathu…” 💞\nNee dream panna future la naan safe ah irukanum nu dhaan yosichirundha… Adhu dhaan un love oda proof 🥹❤️\n“Unnala enakaga 2 years wait panna mudiyuma…” nu ketta moment… ⏰💔\nAndha kelvi la bayam irundhuchu… Nee ennai lose panniduveano nu 😢\n“Yaralayum mudiyathu da…” nu sonna… Aana adhula un insecurity dhaan irundhuchu… love kammi illa 🤍\n“Enaku rich ana person venam… 10 rupa irunthalum ennoda situation purinchu share panra person than venum…” 💸➡️❤️\nAntha line… romba real 🥺 “Nee alaga iruka unna pudichuruku athu love illa… nee enakaga iruka athan unna pudichuruku… athan love…” 💘\nIthu dhaan pure love definition 🫶✨ “Ennala unnoda life la entha mistakes um varakudadhu…” nu sonna appo… Un care la dhaan un bayam irundhuchu 💔\n“Nanum life la neraya mistakes panniruken… athan fresh ah start pannalam nu nenakuren…” 🌅🤍\nFinal ah purinjadhu enna na… Nee enna venum nu kekradhum… Ennala un life la mistake varakudadhu nu bayapadardhu dhaan rendum love dhaan 💍❤️"
+        },
+        {
+            h: "First Official Meet (Madurai) ❤️", 
+            c: "August 2024… andha naal dhaan namma first time nerula meet panna porom nu decide pannom 🥹💞\nPhone la pesum pothu illatha bayam… “Innum konjam dhoorathula dhaan avan irukan…” nu therinja odane romba adhigama aayiduchu 😰💓\nNaan Sivakasi… avan Ramanathapuram… Madurai Maatuthavani Bus Stand 🚌✨\nMeeting ku rendu naal munnadi irundhe en manasu calm ah illa… Lovers ah first time pakkura bayam appo dhaan vandhuchu 🥺\nRendu perum bus stand reach aayidom… crowd la yaar enga nu theriyala 😅\nNaan bayathula oru auto pinnadi poi olinjukitten 🙈💗\nKonjam light ah etti paathen… appo dhaan avan ennai paathaan 💞\n“Vaa anga polam…” nu kooptaan… Aana naan bayathula thalai kuninchukitte nindren 🥺\nAppo dhaan avan vandhu en kaiya pudichaan 🤍 Andha touch la dhaan en bayam konjam koranjadhu 🫶✨\nFirst time rendu perum serndhu sapitta dosa dhaan annaikku 🥞❤️\nAvan oru chair thalli “inga ukkaru” nu sonna moment la… Enakku romba pudichirundhuchu 🥹\nAvan kaal en kaala light ah touch aana moment la… Naan nerves la konjam eduthuten 😳\nAvan sirichaan… andha sirippu la dhaan en bayam full ah karanjiduchu 💕"
+        },
+        {
+            h: "Theatre & First Kiss 🎬", 
+            c: "Thatre la naanga paatha first movie dimandi colony 2, apoo avan movie paakuratha vittu enthaaan paathuttu irruthan. 😍\nNaanum paathen peai sean varum pothum avan shirt ah irruki pudichathu innum nimbam irrukku... 😱\nAntha theatre la than enga first kiss um enga fst kiss kaila than kuduthan next kiss lip la kuduthan 😘\nAthum first time kkavum lip aah vittu konjam thali kuttuthan Atha innum marakkamiditathu, avasara avasarama pathattathula avan kuttutha antha kiss innum en lip la than irrukkunu thinna vaikkuthu antha nigalvu 💋💘"
+        },
+        {
+            h: "Temple Date 🛕", 
+            c: "Theatre apram… namma kovil pakkam pona moment romba calm ah irundhuchu 🛕🤍\nRendu perum serndhu kovil ukkanthu irundhom… Crowd irundhalum enakku andha idam la nee mattum dhaan therinjuchu 💞\nKadavul munadi ninna moment la… En manasukulla oru silent prayer dhaan vandhuchu 🤲\n“Ivar en life la nallaa irukanum… namma love strong ah irukanum…” nu 💗\nAndha kovil la nindrathu just oru visit illa… Adhu namma relationship ku oru blessing maari feel aayiduchu ✨💍"
+        },
+        {
+            h: "His Birthday Surprise 🎂", 
+            c: "Avan birthday annaikku enakku college leave illa… Aana next day 7th dhaan naan decide panninen – “Avana pakkanum… surprise panna poren…” nu 🥹💞\nVeetla “family kooda veliya poren” nu sollittu… Unmaiyila naan Ramnad ku dhaan poren nu avanukku theriyama poyitten 😌✨\nBus stand la irundhu erankumbodhu… “Avan face paakanum…” nu sollittu Bayathula bus pinnadiye oodi olinjadhu… Avan kandupidichadhu… 🙈🤍\nRailway station kuttu poi anga rendu perum ukkanthu neraya pesinom 💞\nAvanukkunu shirts, sweets vaangittu vandhen… Athu ellam kudukkumbodhu avan face la irundha happiness… priceless 🥹🎁\nAnnaikku avan oorula coffee kudichom ☕ Aranmanaiyum serndhu visit pannom 🏰✨\nOru simple birthday… aana enakku romba special day ❤️ Surprise panna ponnalum… piriyum bodhu dhaan romba kastam 🥺\nNaan avanukku gift kuduthen… Aana unmaya sonna… Avan sirippu dhaan enakku biggest gift 💖"
+        },
+        {
+            h: "Couple Dress Event 👕👗", 
+            c: "Naanum avanum first time couple dress decide pannom… Online la white color dhaan order pottom 🤍\nAvan sis event kaaga naan avanga oorukku poyen… Avanga family la yaarukkum naan yaarunu theriyadhu… Naan avanga sis friend maari dhaan ponnen 😌\nEnakku oru white princess gown vaangi kuduthan 👗✨ Avanum white shirt potturundhan 👕🤍\nNaan avanga oorukkulla entry aagum pothu… Avan mic set la radio la potta song… 🎶 Ayyayyo – from Paruthiveeran 🥹🤍\nJust 2 hours maybe… aana adhu enakku oru whole lifetime maari 🫶\nNee sonna… “Neey irundha na unkooda konjam neram kooda irukka mudiyala…” nu 😔\nAdha sollumbodhu naan aludhu kitte dhaan vittu vandhen…\nAndha kastam ellam namma love munnadi romba chinna vishayam dhaan 🥺💞\nWhite dress la ninna andha 2 mani neram… namma manasula dhaan confirm pannom – “Namma rendu perum dhaan.” 🤍"
+        }
+    ];
+
+    const sDiv = document.getElementById('story');
+    data.forEach(s => {
+        let div = document.createElement('div'); div.className = 'acc';
+        div.innerHTML = `<button class="ah" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display=='block'?'none':'block'">${s.h} <span>▼</span></button><div class="ac">${s.c}</div>`;
+        sDiv.appendChild(div);
+    });
+
+    const photos = [
+        {s: 'img1.jpg.jpeg', t: 'Our first camera drama 📸🤣❤️'}, {s: 'img2.jpg.jpeg', t: 'His rose attack 💕🌹'},
+        {s: 'img3.jpg.jpeg', t: 'When I spy… 😎❤️ – NGT memories! ✨'}, {s: 'img4.jpg.jpeg', t: 'That cute couple dress + soldiers moment 😍🔥🤍'},
+        {s: 'img5.jpg.jpeg', t: 'Oru cute selfie, avan funny pose 😆❤️😍'}, {s: 'img6.jpg.jpeg', t: 'Our tiny fingers, big promise 😘💖💍'},
+        {s: 'img7.jpg.jpeg', t: 'Pose level upgraded 😎 – namma try pannina new style 💕✨'}, {s: 'img8.jpg.jpeg', t: 'Our ultimate funny snap 😆📸 – laugh guaranteed 💕🐱'},
+        {s: 'img9.jpg.jpeg', t: 'Hidden faces 😏💖 – avan enkiaa hold pannitu irruppan ❤️🤝'}, {s: 'img10.jpg.jpeg', t: 'Back-to-back love 😏💖 – memories forever 💕🚂'}
+    ];
+ 
+const gDiv = document.getElementById('gifts');
+    photos.forEach(p => {
+        let d = document.createElement('div'); d.className = 'g-card'; d.innerHTML = '🎁';
+        d.onclick = () => pop(p.s, p.t); gDiv.appendChild(d);
+    });
+
+    function start() { if(document.getElementById('n1').value && document.getElementById('n2').value) { document.getElementById('p1').style.display='none'; document.getElementById('p2').style.display='block'; } }
+    function pop(s, t) { document.getElementById('oi').src = s; document.getElementById('cap').innerText = t; document.getElementById('over').style.display = 'flex'; }
+</script>
+</body>
+</html>
